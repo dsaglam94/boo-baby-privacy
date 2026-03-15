@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Shield, FileText, Globe } from "lucide-react";
+import { Shield, FileText, Globe, HelpCircle } from "lucide-react";
 import type { Locale } from "@/lib/get-dictionary";
 import { getDictionary } from "@/lib/get-dictionary";
 
@@ -51,6 +51,15 @@ export default function Header({ lang, currentPath = "" }: { lang: Locale, curre
             }}>
               <FileText size={18} />
               {dict.nav.terms}
+            </Link>
+            <Link href={`/${lang}/support`} style={{ 
+              display: 'flex', 
+              alignItems: 'center', 
+              gap: '0.5rem',
+              fontWeight: 500
+            }}>
+              <HelpCircle size={18} />
+              {dict.nav.support}
             </Link>
           </nav>
 

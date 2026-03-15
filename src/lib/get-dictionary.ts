@@ -10,11 +10,14 @@ export const dictionaries = {
       termsTitle: "Terms of Use",
       termsDesc: "Understand the rules for using Boo Baby services.",
       readMore: "Read More",
+      supportTitle: "Support",
+      supportDesc: "Need help? Contact our support team.",
       footer: "All rights reserved."
     },
     nav: {
       privacy: "Privacy",
-      terms: "Terms"
+      terms: "Terms",
+      support: "Support"
     }
   },
   tr: {
@@ -28,11 +31,14 @@ export const dictionaries = {
       termsTitle: "Kullanım Koşulları",
       termsDesc: "Boo Baby hizmetlerini kullanma kurallarını anlayın.",
       readMore: "Devamını Oku",
+      supportTitle: "Destek",
+      supportDesc: "Yardıma mı ihtiyacınız var? Destek ekibimizle iletişime geçin.",
       footer: "Tüm hakları saklıdır."
     },
     nav: {
       privacy: "Gizlilik",
-      terms: "Koşullar"
+      terms: "Koşullar",
+      support: "Destek"
     }
   }
 };

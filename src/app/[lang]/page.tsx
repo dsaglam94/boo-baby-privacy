@@ -1,7 +1,7 @@
 import Header from "@/components/Header";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, ShieldCheck, FileText } from "lucide-react";
+import { ArrowRight, ShieldCheck, FileText, HelpCircle } from "lucide-react";
 import type { Locale } from "@/lib/get-dictionary";
 import { getDictionary } from "@/lib/get-dictionary";
 
@@ -55,10 +55,10 @@ export default async function Home({ params }: { params: Promise<{ lang: Locale 
 
         <div style={{ 
           display: 'grid', 
-          gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', 
-          gap: '2rem',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', 
+          gap: '1.5rem',
           width: '100%',
-          maxWidth: '800px'
+          maxWidth: '900px'
         }}>
           <Link href={`/${lang}/privacy`} className="glass-panel" style={{
             padding: '2rem',
@@ -107,6 +107,32 @@ export default async function Home({ params }: { params: Promise<{ lang: Locale 
               fontWeight: 600,
               marginTop: 'auto',
               color: 'var(--secondary)'
+            }}>
+              {dict.home.readMore} <ArrowRight size={16} />
+            </div>
+          </Link>
+
+          <Link href={`/${lang}/support`} className="glass-panel" style={{
+            padding: '2rem',
+            borderRadius: '1.5rem',
+            textAlign: 'left',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '1rem',
+            transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+          }}>
+            <HelpCircle size={32} color="var(--primary)" />
+            <h2 style={{ margin: 0 }}>{dict.home.supportTitle}</h2>
+            <p style={{ color: 'var(--muted)', fontSize: '0.95rem' }}>
+              {dict.home.supportDesc}
+            </p>
+            <div style={{ 
+              display: 'flex', 
+              alignItems: 'center', 
+              gap: '0.5rem', 
+              fontWeight: 600,
+              marginTop: 'auto',
+              color: 'var(--primary)'
             }}>
               {dict.home.readMore} <ArrowRight size={16} />
             </div>
