@@ -40,6 +40,48 @@ export const dictionaries = {
       terms: "Koşullar",
       support: "Destek"
     }
+  },
+  fr: {
+    title: "Boo Baby - Confidentialité et Conditions",
+    description: "Politique de confidentialité et conditions d'utilisation de l'application Boo Baby.",
+    home: {
+      welcome: "Bienvenue sur",
+      subtitle: "Des politiques claires, transparentes et faciles à comprendre pour nos utilisateurs. Votre vie privée est notre priorité absolue.",
+      privacyTitle: "Politique de Confidentialité",
+      privacyDesc: "Découvrez comment nous protégeons et traitons vos données personnelles.",
+      termsTitle: "Conditions d'Utilisation",
+      termsDesc: "Comprenez les règles d'utilisation des services Boo Baby.",
+      readMore: "En savoir plus",
+      supportTitle: "Support",
+      supportDesc: "Besoin d'aide ? Contactez notre équipe d'assistance.",
+      footer: "Tous droits réservés."
+    },
+    nav: {
+      privacy: "Confidentialité",
+      terms: "Conditions",
+      support: "Support"
+    }
+  },
+  de: {
+    title: "Boo Baby - Datenschutz & Bedingungen",
+    description: "Datenschutzerklärung und Nutzungsbedingungen für die Boo Baby App.",
+    home: {
+      welcome: "Willkommen bei",
+      subtitle: "Klare, transparente und leicht verständliche Richtlinien für unsere Nutzer. Ihre Privatsphäre hat für uns oberste Priorität.",
+      privacyTitle: "Datenschutzerklärung",
+      privacyDesc: "Erfahren Sie, wie wir Ihre persönlichen Daten schützen und handhaben.",
+      termsTitle: "Nutzungsbedingungen",
+      termsDesc: "Verstehen Sie die Regeln für die Nutzung der Boo Baby Dienste.",
+      readMore: "Mehr lesen",
+      supportTitle: "Support",
+      supportDesc: "Benötigen Sie Hilfe? Kontaktieren Sie unser Support-Team.",
+      footer: "Alle Rechte vorbehalten."
+    },
+    nav: {
+      privacy: "Datenschutz",
+      terms: "Bedingungen",
+      support: "Support"
+    }
   }
 };
 

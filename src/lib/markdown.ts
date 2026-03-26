@@ -4,7 +4,7 @@ import type { Locale } from "./get-dictionary";
 
 export function getMarkdownContent(filename: string, lang: Locale) {
   const baseName = filename.replace(".md", "");
-  const localeFilename = lang === "tr" ? `${baseName}-tr.md` : `${baseName}.md`;
+  const localeFilename = lang === "en" ? `${baseName}.md` : `${baseName}-${lang}.md`;
   const filePath = path.join(process.cwd(), localeFilename);
   
   try {

@@ -9,7 +9,7 @@ export default async function TermsPage({ params }: { params: Promise<{ lang: Lo
 
   return (
     <main>
-      <Header lang={lang} currentPath="terms" />
+      <Header lang={lang} />
       <div className="container glass-panel markdown-content" style={{
         marginTop: '2rem',
         borderRadius: '1.5rem',

@@ -9,7 +9,7 @@ export default async function PrivacyPage({ params }: { params: Promise<{ lang: 
 
   return (
     <main>
-      <Header lang={lang} currentPath="privacy" />
+      <Header lang={lang} />
       <div className="container glass-panel markdown-content" style={{
         marginTop: '2rem',
         borderRadius: '1.5rem',

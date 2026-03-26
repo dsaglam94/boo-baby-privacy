@@ -1,11 +1,11 @@
 import Link from "next/link";
-import { Shield, FileText, Globe, HelpCircle } from "lucide-react";
+import { Shield, FileText, HelpCircle } from "lucide-react";
 import type { Locale } from "@/lib/get-dictionary";
 import { getDictionary } from "@/lib/get-dictionary";
+import LanguageSelector from "./LanguageSelector";
 
-export default function Header({ lang, currentPath = "" }: { lang: Locale, currentPath?: string }) {
+export default function Header({ lang }: { lang: Locale }) {
   const dict = getDictionary(lang);
-  const otherLang = lang === "en" ? "tr" : "en";
 
   return (
     <header className="glass-panel" style={{
@@ -21,18 +21,18 @@ export default function Header({ lang, currentPath = "" }: { lang: Locale, curre
         alignItems: 'center',
         padding: '0 2rem'
       }}>
-        <Link href={`/${lang}`} style={{ 
-          fontSize: '1.5rem', 
-          fontWeight: 700,
-          fontFamily: 'var(--font-outfit)',
-          display: 'flex',
-          alignItems: 'center',
-          gap: '0.5rem'
-        }}>
-          <span className="premium-gradient">Boo Baby</span>
-        </Link>
-        
-        <div style={{ display: 'flex', alignItems: 'center', gap: '2.5rem' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
+          <Link href={`/${lang}`} style={{ 
+            fontSize: '1.5rem', 
+            fontWeight: 700,
+            fontFamily: 'var(--font-outfit)',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '0.5rem'
+          }}>
+            <span className="premium-gradient">Boo Baby</span>
+          </Link>
+          
           <nav style={{ display: 'flex', gap: '2rem' }}>
             <Link href={`/${lang}/privacy`} style={{ 
               display: 'flex', 
@@ -62,26 +62,9 @@ export default function Header({ lang, currentPath = "" }: { lang: Locale, curre
               {dict.nav.support}
             </Link>
           </nav>
-
-          <Link 
-            href={`/${otherLang}${currentPath ? `/${currentPath}` : ''}`}
-            className="glass-panel"
-            style={{
-              padding: '0.4rem 0.8rem',
-              borderRadius: '0.75rem',
-              fontSize: '0.85rem',
-              fontWeight: 600,
-              display: 'flex',
-              alignItems: 'center',
-              gap: '0.4rem',
-              background: 'var(--surface)',
-              border: '1px solid var(--border)'
-            }}
-          >
-            <Globe size={14} />
-            {otherLang.toUpperCase()}
-          </Link>
         </div>
+
+        <LanguageSelector lang={lang} />
       </div>
     </header>
   );
