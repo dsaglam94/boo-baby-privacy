@@ -69,8 +69,10 @@ export default async function Home({ params }: { params: Promise<{ lang: Locale 
             gap: '1rem',
             transition: 'transform 0.2s ease, box-shadow 0.2s ease',
           }}>
-            <ShieldCheck size={32} color="var(--primary)" />
-            <h2 style={{ margin: 0 }}>{dict.home.privacyTitle}</h2>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <ShieldCheck size={32} color="var(--primary)" />
+              <h2 style={{ margin: 0 }}>{dict.home.privacyTitle}</h2>
+            </div>
             <p style={{ color: 'var(--muted)', fontSize: '0.95rem' }}>
               {dict.home.privacyDesc}
             </p>
@@ -95,8 +97,10 @@ export default async function Home({ params }: { params: Promise<{ lang: Locale 
             gap: '1rem',
             transition: 'transform 0.2s ease, box-shadow 0.2s ease',
           }}>
-            <FileText size={32} color="var(--secondary)" />
-            <h2 style={{ margin: 0 }}>{dict.home.termsTitle}</h2>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <FileText size={32} color="var(--secondary)" />
+              <h2 style={{ margin: 0 }}>{dict.home.termsTitle}</h2>
+            </div>
             <p style={{ color: 'var(--muted)', fontSize: '0.95rem' }}>
               {dict.home.termsDesc}
             </p>
@@ -121,8 +125,10 @@ export default async function Home({ params }: { params: Promise<{ lang: Locale 
             gap: '1rem',
             transition: 'transform 0.2s ease, box-shadow 0.2s ease',
           }}>
-            <HelpCircle size={32} color="var(--primary)" />
-            <h2 style={{ margin: 0 }}>{dict.home.supportTitle}</h2>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <HelpCircle size={32} color="var(--primary)" />
+              <h2 style={{ margin: 0 }}>{dict.home.supportTitle}</h2>
+            </div>
             <p style={{ color: 'var(--muted)', fontSize: '0.95rem' }}>
               {dict.home.supportDesc}
             </p>

@@ -1,70 +1,150 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Shield, FileText, HelpCircle } from "lucide-react";
+import Image from "next/image";
+import { Shield, FileText, HelpCircle, Menu, X } from "lucide-react";
 import type { Locale } from "@/lib/get-dictionary";
 import { getDictionary } from "@/lib/get-dictionary";
 import LanguageSelector from "./LanguageSelector";
 
 export default function Header({ lang }: { lang: Locale }) {
   const dict = getDictionary(lang);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // Prevent scroll when menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.documentElement.style.overflow = 'hidden';
+      document.body.style.overflow = 'hidden';
+      return () => {
+        document.documentElement.style.overflow = '';
+        document.body.style.overflow = '';
+      };
+    }
+  }, [isMenuOpen]);
 
   return (
     <header className="glass-panel" style={{
       position: 'sticky',
       top: 0,
-      zIndex: 100,
-      padding: '1rem 0',
-      marginBottom: '2rem'
+      width: '100%',
+      zIndex: 1000,
+      padding: '0.75rem 0',
+      borderLeft: 'none',
+      borderRight: 'none',
+      borderTop: 'none',
+      transition: 'background-color 0.3s ease, backdrop-filter 0.3s ease, -webkit-backdrop-filter 0.3s ease',
+      backdropFilter: 'blur(20px) saturate(180%)',
+      WebkitBackdropFilter: 'blur(20px) saturate(180%)'
     }}>
-      <div className="container" style={{
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        padding: '0 2rem'
-      }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
-          <Link href={`/${lang}`} style={{ 
-            fontSize: '1.5rem', 
-            fontWeight: 700,
-            fontFamily: 'var(--font-outfit)',
+      <div className="container header-container">
+        <Link href={`/${lang}`} style={{ 
+          fontSize: '1.5rem', 
+          fontWeight: 700,
+          fontFamily: 'var(--font-outfit)',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '0.75rem',
+          zIndex: 1001
+        }}>
+          <Image 
+            src="/boo-baby-logo.png" 
+            alt="Boo Baby Logo" 
+            width={36} 
+            height={36} 
+            style={{ borderRadius: '10px' }}
+          />
+          <span className="premium-gradient">Boo Baby</span>
+        </Link>
+        
+        {/* Desktop Navigation */}
+        <nav className="nav-desktop">
+          <Link href={`/${lang}/privacy`} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 500 }}>
+            <Shield size={18} />
+            {dict.nav.privacy}
+          </Link>
+          <Link href={`/${lang}/terms`} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 500 }}>
+            <FileText size={18} />
+            {dict.nav.terms}
+          </Link>
+          <Link href={`/${lang}/support`} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 500 }}>
+            <HelpCircle size={18} />
+            {dict.nav.support}
+          </Link>
+          <LanguageSelector lang={lang} />
+        </nav>
+
+        {/* Mobile Menu Button */}
+        <button 
+          type="button"
+          className="mobile-menu-btn"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label="Toggle menu"
+        >
+          {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+        </button>
+
+        {/* Mobile Menu Overlay */}
+        <div className={`mobile-menu-overlay ${isMenuOpen ? 'open' : ''}`}>
+          <div style={{
+            position: 'absolute',
+            top: '1.5rem',
+            left: '2rem',
             display: 'flex',
             alignItems: 'center',
-            gap: '0.5rem'
+            gap: '0.75rem'
           }}>
-            <span className="premium-gradient">Boo Baby</span>
-          </Link>
-          
-          <nav style={{ display: 'flex', gap: '2rem' }}>
-            <Link href={`/${lang}/privacy`} style={{ 
-              display: 'flex', 
-              alignItems: 'center', 
-              gap: '0.5rem',
-              fontWeight: 500
-            }}>
-              <Shield size={18} />
-              {dict.nav.privacy}
-            </Link>
-            <Link href={`/${lang}/terms`} style={{ 
-              display: 'flex', 
-              alignItems: 'center', 
-              gap: '0.5rem',
-              fontWeight: 500
-            }}>
-              <FileText size={18} />
-              {dict.nav.terms}
-            </Link>
-            <Link href={`/${lang}/support`} style={{ 
-              display: 'flex', 
-              alignItems: 'center', 
-              gap: '0.5rem',
-              fontWeight: 500
-            }}>
-              <HelpCircle size={18} />
-              {dict.nav.support}
-            </Link>
-          </nav>
-        </div>
+            <Image 
+              src="/boo-baby-logo.png" 
+              alt="Boo Baby Logo" 
+              width={32} 
+              height={32} 
+              style={{ borderRadius: '8px' }}
+            />
+            <span className="premium-gradient" style={{ fontSize: '1.25rem', fontWeight: 700 }}>Boo Baby</span>
+          </div>
 
-        <LanguageSelector lang={lang} />
+          <button 
+            type="button"
+            onClick={() => setIsMenuOpen(false)}
+            style={{
+              position: 'absolute',
+              top: '1.5rem',
+              right: '2rem',
+              background: 'none',
+              border: 'none',
+              color: 'var(--foreground)',
+              cursor: 'pointer'
+            }}
+          >
+            <X size={32} />
+          </button>
+
+          <Link href={`/${lang}/privacy`} className="mobile-menu-link" onClick={() => setIsMenuOpen(false)}>
+            <Shield size={24} />
+            {dict.nav.privacy}
+          </Link>
+          <Link href={`/${lang}/terms`} className="mobile-menu-link" onClick={() => setIsMenuOpen(false)}>
+            <FileText size={24} />
+            {dict.nav.terms}
+          </Link>
+          <Link href={`/${lang}/support`} className="mobile-menu-link" onClick={() => setIsMenuOpen(false)}>
+            <HelpCircle size={24} />
+            {dict.nav.support}
+          </Link>
+          <div style={{ 
+            marginTop: 'auto', 
+            paddingTop: '2rem',
+            paddingBottom: '2rem', 
+            borderTop: '1px solid var(--border)',
+            display: 'flex',
+            justifyContent: 'center',
+            width: '100%'
+          }}>
+            <LanguageSelector lang={lang} upward={true} />
+          </div>
+        </div>
       </div>
     </header>
   );

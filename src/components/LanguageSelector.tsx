@@ -14,9 +14,11 @@ const languages: { code: Locale; label: string; flag: string }[] = [
 ];
 
 export default function LanguageSelector({ 
-  lang
+  lang,
+  upward = false
 }: { 
   lang: Locale; 
+  upward?: boolean;
 }) {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
@@ -84,16 +86,18 @@ export default function LanguageSelector({
           className="glass-panel"
           style={{
             position: "absolute",
-            top: "calc(100% + 0.5rem)",
-            right: 0,
-            width: "160px",
-            borderRadius: "1rem",
+            [upward ? "bottom" : "top"]: "calc(100% + 0.5rem)",
+            right: upward ? "auto" : 0,
+            left: upward ? "50%" : "auto",
+            transform: upward ? "translateX(-50%)" : "none",
+            width: "140px",
+            borderRadius: "1.25rem",
             padding: "0.5rem",
             zIndex: 1000,
             display: "flex",
             flexDirection: "column",
             gap: "0.25rem",
-            boxShadow: "var(--shadow-lg)",
+            boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)",
             overflow: "hidden"
           }}
         >
