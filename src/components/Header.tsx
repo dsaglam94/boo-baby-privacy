@@ -121,6 +121,17 @@ export default function Header({ lang }: { lang: Locale }) {
             <X size={32} />
           </button>
 
+          <div style={{ 
+            marginBottom: '1rem', 
+            paddingBottom: '1.5rem',
+            borderBottom: '1px solid var(--border)',
+            display: 'flex',
+            justifyContent: 'flex-start',
+            width: '100%'
+          }}>
+            <LanguageSelector lang={lang} upward={false} />
+          </div>
+
           <Link href={`/${lang}/privacy`} className="mobile-menu-link" onClick={() => setIsMenuOpen(false)}>
             <Shield size={24} />
             {dict.nav.privacy}
@@ -133,17 +144,7 @@ export default function Header({ lang }: { lang: Locale }) {
             <HelpCircle size={24} />
             {dict.nav.support}
           </Link>
-          <div style={{ 
-            marginTop: 'auto', 
-            paddingTop: '2rem',
-            paddingBottom: '2rem', 
-            borderTop: '1px solid var(--border)',
-            display: 'flex',
-            justifyContent: 'center',
-            width: '100%'
-          }}>
-            <LanguageSelector lang={lang} upward={true} />
-          </div>
+
         </div>
       </div>
     </header>
