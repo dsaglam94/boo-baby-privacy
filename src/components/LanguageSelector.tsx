@@ -83,20 +83,21 @@ export default function LanguageSelector({
 
       {isOpen && (
         <div
-          className="glass-panel"
           style={{
             position: "absolute",
             [upward ? "bottom" : "top"]: "calc(100% + 0.5rem)",
-            right: upward ? "auto" : 0,
-            left: upward ? "50%" : "auto",
+            left: upward ? "50%" : 0,
+            right: "auto",
             transform: upward ? "translateX(-50%)" : "none",
             width: "140px",
             borderRadius: "1.25rem",
             padding: "0.5rem",
-            zIndex: 1000,
+            zIndex: 2100,
             display: "flex",
             flexDirection: "column",
             gap: "0.25rem",
+            background: "var(--surface)",
+            border: "1px solid var(--border)",
             boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)",
             overflow: "hidden"
           }}
