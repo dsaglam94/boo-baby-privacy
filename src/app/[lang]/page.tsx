@@ -82,7 +82,7 @@ export default async function Home({ params }: { params: Promise<{ lang: Locale 
               gap: '0.5rem', 
               fontWeight: 600,
               marginTop: 'auto',
-              color: 'var(--primary)'
+              color: 'var(--secondary)'
             }}>
               {dict.home.readMore} <ArrowRight size={16} />
             </div>
@@ -98,7 +98,7 @@ export default async function Home({ params }: { params: Promise<{ lang: Locale 
             transition: 'transform 0.2s ease, box-shadow 0.2s ease',
           }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <FileText size={32} color="var(--secondary)" />
+              <FileText size={32} color="var(--primary)" />
               <h2 style={{ margin: 0 }}>{dict.home.termsTitle}</h2>
             </div>
             <p style={{ color: 'var(--muted)', fontSize: '0.95rem' }}>
@@ -138,7 +138,7 @@ export default async function Home({ params }: { params: Promise<{ lang: Locale 
               gap: '0.5rem', 
               fontWeight: 600,
               marginTop: 'auto',
-              color: 'var(--primary)'
+              color: 'var(--secondary)'
             }}>
               {dict.home.readMore} <ArrowRight size={16} />
             </div>
