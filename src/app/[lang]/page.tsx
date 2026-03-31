@@ -55,13 +55,13 @@ export default async function Home({ params }: { params: Promise<{ lang: Locale 
 
         <div style={{ 
           display: 'grid', 
-          gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', 
+          gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', 
           gap: '1.5rem',
           width: '100%',
-          maxWidth: '900px'
+          maxWidth: '1100px'
         }}>
           <Link href={`/${lang}/privacy`} className="glass-panel" style={{
-            padding: '2rem',
+            padding: '1.5rem',
             borderRadius: '1.5rem',
             textAlign: 'left',
             display: 'flex',
@@ -70,8 +70,16 @@ export default async function Home({ params }: { params: Promise<{ lang: Locale 
             transition: 'transform 0.2s ease, box-shadow 0.2s ease',
           }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <ShieldCheck size={32} color="var(--primary)" />
-              <h2 style={{ margin: 0 }}>{dict.home.privacyTitle}</h2>
+              <ShieldCheck size={28} color="var(--primary)" style={{ flexShrink: 0 }} />
+              <h2 style={{ 
+                margin: 0, 
+                fontSize: '1rem', 
+                lineHeight: '1.2', 
+                whiteSpace: 'nowrap',
+                overflow: 'hidden',
+                textOverflow: 'ellipsis',
+                letterSpacing: '-0.01em'
+              }}>{dict.home.privacyTitle}</h2>
             </div>
             <p style={{ color: 'var(--muted)', fontSize: '0.95rem' }}>
               {dict.home.privacyDesc}
@@ -89,7 +97,7 @@ export default async function Home({ params }: { params: Promise<{ lang: Locale 
           </Link>
 
           <Link href={`/${lang}/terms`} className="glass-panel" style={{
-            padding: '2rem',
+            padding: '1.5rem',
             borderRadius: '1.5rem',
             textAlign: 'left',
             display: 'flex',
@@ -98,8 +106,16 @@ export default async function Home({ params }: { params: Promise<{ lang: Locale 
             transition: 'transform 0.2s ease, box-shadow 0.2s ease',
           }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <FileText size={32} color="var(--primary)" />
-              <h2 style={{ margin: 0 }}>{dict.home.termsTitle}</h2>
+              <FileText size={28} color="var(--primary)" style={{ flexShrink: 0 }} />
+              <h2 style={{ 
+                margin: 0, 
+                fontSize: '1rem', 
+                lineHeight: '1.2', 
+                whiteSpace: 'nowrap',
+                overflow: 'hidden',
+                textOverflow: 'ellipsis',
+                letterSpacing: '-0.01em'
+              }}>{dict.home.termsTitle}</h2>
             </div>
             <p style={{ color: 'var(--muted)', fontSize: '0.95rem' }}>
               {dict.home.termsDesc}
@@ -117,7 +133,7 @@ export default async function Home({ params }: { params: Promise<{ lang: Locale 
           </Link>
 
           <Link href={`/${lang}/support`} className="glass-panel" style={{
-            padding: '2rem',
+            padding: '1.5rem',
             borderRadius: '1.5rem',
             textAlign: 'left',
             display: 'flex',
@@ -126,8 +142,16 @@ export default async function Home({ params }: { params: Promise<{ lang: Locale 
             transition: 'transform 0.2s ease, box-shadow 0.2s ease',
           }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <HelpCircle size={32} color="var(--primary)" />
-              <h2 style={{ margin: 0 }}>{dict.home.supportTitle}</h2>
+              <HelpCircle size={28} color="var(--primary)" style={{ flexShrink: 0 }} />
+              <h2 style={{ 
+                margin: 0, 
+                fontSize: '1rem', 
+                lineHeight: '1.2', 
+                whiteSpace: 'nowrap',
+                overflow: 'hidden',
+                textOverflow: 'ellipsis',
+                letterSpacing: '-0.01em'
+              }}>{dict.home.supportTitle}</h2>
             </div>
             <p style={{ color: 'var(--muted)', fontSize: '0.95rem' }}>
               {dict.home.supportDesc}
