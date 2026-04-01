@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import Link from "next/link";
-import { ArrowRight, ShieldCheck, FileText, HelpCircle } from "lucide-react";
+import { ArrowRight, ShieldCheck, FileText, Headset } from "lucide-react";
 import type { Locale } from "@/lib/get-dictionary";
 import { getDictionary } from "@/lib/get-dictionary";
 
@@ -101,7 +101,7 @@ export default async function LegalPage({ params }: { params: Promise<{ lang: Lo
             transition: 'transform 0.2s ease, box-shadow 0.2s ease',
           }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-              <HelpCircle size={32} color="var(--primary)" style={{ flexShrink: 0 }} />
+              <Headset size={32} color="var(--primary)" style={{ flexShrink: 0 }} />
               <h2 style={{ margin: 0, fontSize: '1.25rem', fontWeight: 600 }}>{dict.home.supportTitle}</h2>
             </div>
             <p style={{ color: 'var(--muted)', fontSize: '1rem', lineHeight: '1.5' }}>

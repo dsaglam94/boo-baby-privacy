@@ -149,7 +149,7 @@ export default async function Home({ params }: { params: Promise<{ lang: Locale 
                    index === 2 ? <Globe size={28} /> : 
                    <CheckCircle2 size={28} />}
                 </div>
-                <h3 style={{ fontSize: '1.5rem', margin: 0, fontWeight: 700 }}>{feature.title}</h3>
+                <h3 style={{ fontSize: '1.5rem', margin: 0, fontWeight: 700, textWrap:'nowrap' }}>{feature.title}</h3>
                 <p style={{ color: 'var(--muted)', lineHeight: 1.6, fontSize: '1.05rem' }}>{feature.desc}</p>
               </div>
             ))}

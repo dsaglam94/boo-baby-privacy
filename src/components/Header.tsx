@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Shield, FileText, HelpCircle, Menu, X } from "lucide-react";
+import { Shield, FileText, Headset, Scale, Menu, X } from "lucide-react";
 import type { Locale } from "@/lib/get-dictionary";
 import { getDictionary } from "@/lib/get-dictionary";
 import LanguageSelector from "./LanguageSelector";
@@ -69,11 +69,11 @@ export default function Header({ lang }: { lang: Locale }) {
             {dict.nav.terms}
           </Link>
           <Link href={`/${lang}/support`} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 500, color: 'var(--foreground)' }}>
-            <HelpCircle size={18} />
+            <Headset size={18} />
             {dict.nav.support}
           </Link>
           <Link href={`/${lang}/legal`} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 500, color: 'var(--foreground)' }}>
-            <Shield size={18} />
+            <Scale size={18} />
             {dict.nav.legal}
           </Link>
           <LanguageSelector lang={lang} />
@@ -145,11 +145,11 @@ export default function Header({ lang }: { lang: Locale }) {
             {dict.nav.terms}
           </Link>
           <Link href={`/${lang}/support`} className="mobile-menu-link" onClick={() => setIsMenuOpen(false)}>
-            <HelpCircle size={24} />
+            <Headset size={24} />
             {dict.nav.support}
           </Link>
           <Link href={`/${lang}/legal`} className="mobile-menu-link" onClick={() => setIsMenuOpen(false)}>
-            <Shield size={24} />
+            <Scale size={24} />
             {dict.nav.legal}
           </Link>
 

@@ -40,7 +40,7 @@ export const dictionaries = {
     title: "Boo Baby - Bebek Takip ve Ebeveynlik Uygulaması",
     description: "Bebeğinizin büyümesini, beslenmesini, uykusunu ve daha fazlasını Boo Baby ile takip edin.",
     marketing: {
-      title: "Bebeğinizin ihtiyacı olan her şey tek bir uygulamada.",
+      title: "Bebeğinizin ihtiyacı olan her şey, tek bir uygulamada.",
       subtitle: "Bebeğinizin gelişim yolculuğu için en iyi yol arkadaşı. Beslenme, uyku, bez değişimi ve büyüme aşamalarını kolayca takip edin.",
       appStore: "App Store",
       playStore: "Play Store",
