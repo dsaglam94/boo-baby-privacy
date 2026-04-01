@@ -60,17 +60,21 @@ export default function Header({ lang }: { lang: Locale }) {
         
         {/* Desktop Navigation */}
         <nav className="nav-desktop">
-          <Link href={`/${lang}/privacy`} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 500 }}>
+          <Link href={`/${lang}/privacy`} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 500, color: 'var(--foreground)' }}>
             <Shield size={18} />
             {dict.nav.privacy}
           </Link>
-          <Link href={`/${lang}/terms`} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 500 }}>
+          <Link href={`/${lang}/terms`} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 500, color: 'var(--foreground)' }}>
             <FileText size={18} />
             {dict.nav.terms}
           </Link>
-          <Link href={`/${lang}/support`} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 500 }}>
+          <Link href={`/${lang}/support`} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 500, color: 'var(--foreground)' }}>
             <HelpCircle size={18} />
             {dict.nav.support}
+          </Link>
+          <Link href={`/${lang}/legal`} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 500, color: 'var(--foreground)' }}>
+            <Shield size={18} />
+            {dict.nav.legal}
           </Link>
           <LanguageSelector lang={lang} />
         </nav>
@@ -143,6 +147,10 @@ export default function Header({ lang }: { lang: Locale }) {
           <Link href={`/${lang}/support`} className="mobile-menu-link" onClick={() => setIsMenuOpen(false)}>
             <HelpCircle size={24} />
             {dict.nav.support}
+          </Link>
+          <Link href={`/${lang}/legal`} className="mobile-menu-link" onClick={() => setIsMenuOpen(false)}>
+            <Shield size={24} />
+            {dict.nav.legal}
           </Link>
 
         </div>
