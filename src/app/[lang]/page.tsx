@@ -39,7 +39,7 @@ export default async function Home({ params }: { params: Promise<{ lang: Locale 
   const screenshots = screenshotPaths[lang] || screenshotPaths.en;
 
   return (
-    <main className="mesh-gradient" style={{ minHeight: '100vh', overflowX: 'hidden' }}>
+    <main className="mesh-gradient" style={{ minHeight: '100dvh' }}>
       <Header lang={lang} />
       
       {/* Hero & Showcase Section */}
