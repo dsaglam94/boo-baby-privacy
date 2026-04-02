@@ -8,8 +8,9 @@ export default async function TermsPage({ params }: { params: Promise<{ lang: Lo
   const content = getMarkdownContent("terms-of-use.md", lang);
 
   return (
-    <main>
+    <>
       <Header lang={lang} />
+      <main>
       <div className="container glass-panel markdown-content" style={{
         marginTop: '2rem',
         borderRadius: '1.5rem',
@@ -17,6 +18,7 @@ export default async function TermsPage({ params }: { params: Promise<{ lang: Lo
       }}>
         <ReactMarkdown>{content}</ReactMarkdown>
       </div>
-    </main>
+      </main>
+    </>
   );
 }

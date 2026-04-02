@@ -8,8 +8,9 @@ export default async function SupportPage({ params }: { params: Promise<{ lang: 
   const content = getMarkdownContent("support.md", lang);
 
   return (
-    <main>
+    <>
       <Header lang={lang} />
+      <main>
       <div className="container glass-panel markdown-content" style={{
         marginTop: '2rem',
         borderRadius: '1.5rem',
@@ -17,6 +18,7 @@ export default async function SupportPage({ params }: { params: Promise<{ lang: 
       }}>
         <ReactMarkdown>{content}</ReactMarkdown>
       </div>
-    </main>
+      </main>
+    </>
   );
 }

@@ -9,8 +9,9 @@ export default async function LegalPage({ params }: { params: Promise<{ lang: Lo
   const dict = getDictionary(lang);
 
   return (
-    <main>
+    <>
       <Header lang={lang} />
+      <main>
       <div className="container" style={{
         marginTop: '4rem',
         textAlign: 'center'
@@ -131,6 +132,7 @@ export default async function LegalPage({ params }: { params: Promise<{ lang: Lo
       }}>
         <p>&copy; {new Date().getFullYear()} Boo Baby. {dict.home.footer}</p>
       </footer>
-    </main>
+      </main>
+    </>
   );
 }
