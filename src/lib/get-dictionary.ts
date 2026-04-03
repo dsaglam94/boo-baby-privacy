@@ -7,6 +7,7 @@ export const dictionaries = {
       subtitle: "The ultimate companion for your baby's development journey. Track feeding, sleep, diaper changes and growth milestones with ease.",
       appStore: "App Store",
       playStore: "Play Store",
+      downloadOnAppStore: "Download on the App Store",
       featuresTitle: "Why parents love Boo Baby",
       features: [
         { title: "Smart Tracking", desc: "Log every feeding, sleep session, and diaper change with just a few taps." },
@@ -44,6 +45,7 @@ export const dictionaries = {
       subtitle: "Bebeğinizin gelişim yolculuğu için en iyi yol arkadaşı. Beslenme, uyku, bez değişimi ve büyüme aşamalarını kolayca takip edin.",
       appStore: "App Store",
       playStore: "Play Store",
+      downloadOnAppStore: "App Store'dan İndirin",
       featuresTitle: "Ebeveynler neden Boo Baby'yi seviyor?",
       features: [
         { title: "Akıllı Takip", desc: "Beslenme, uyku ve bez değişimlerini sadece birkaç dokunuşla kaydedin." },
@@ -81,6 +83,7 @@ export const dictionaries = {
       subtitle: "Le compagnon ultime pour le voyage de développement de votre bébé. Suivez facilement l'alimentation, le sommeil, le changement de couches et les étapes de croissance.",
       appStore: "App Store",
       playStore: "Play Store",
+      downloadOnAppStore: "Télécharger dans l'App Store",
       featuresTitle: "Pourquoi les parents aiment Boo Baby",
       features: [
         { title: "Suivi Intelligent", desc: "Enregistrez chaque repas, session de sommeil et changement de couche en quelques clics." },
@@ -118,6 +121,7 @@ export const dictionaries = {
       subtitle: "Der ultimative Begleiter für die Entwicklung Ihres Babys. Verfolgen Sie Fütterung, Schlaf, Windelwechsel und Wachstumsschritte mit Leichtigkeit.",
       appStore: "App Store",
       playStore: "Play Store",
+      downloadOnAppStore: "Laden im App Store",
       featuresTitle: "Warum Eltern Boo Baby lieben",
       features: [
         { title: "Intelligentes Tracking", desc: "Erfassen Sie jede Fütterung, Schlafphase und jeden Windelwechsel mit nur wenigen Klicks." },
