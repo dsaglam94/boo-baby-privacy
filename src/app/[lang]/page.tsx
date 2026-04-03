@@ -4,6 +4,7 @@ import Link from "next/link";
 import { CheckCircle2, ShieldCheck, Zap, Globe, Sparkles } from "lucide-react";
 import type { Locale } from "@/lib/get-dictionary";
 import { getDictionary } from "@/lib/get-dictionary";
+import AppStoreButton from "@/components/AppStoreButton";
 
 export default async function Home({ params }: { params: Promise<{ lang: Locale }> }) {
   const { lang } = await params;
@@ -98,6 +99,10 @@ export default async function Home({ params }: { params: Promise<{ lang: Locale 
           }}>
             {dict.marketing.subtitle}
           </p>
+
+          <div style={{ marginBottom: '5rem' }}>
+            <AppStoreButton lang={lang} variant="hero" />
+          </div>
 
           {/* Dynamic Showcase Component */}
           <Showcase screenshots={screenshots} />
