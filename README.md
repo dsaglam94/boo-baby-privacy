@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Boo-Baby Privacy & Legal Documents
+
+This is the repository for the legal and support documentation of the **Boo-Baby** mobile application. It is a Next.js project that renders Markdown files into a clean, modern web interface.
+
+## Supported Documents
+
+The repository contains the following documents in multiple languages (English, Turkish, German, French):
+
+- **Privacy Policy**: `privacy-policy[-lang].md`
+- **Terms of Use**: `terms-of-use[-lang].md`
+- **Support**: `support[-lang].md`
+
+## Tech Stack
+
+- **Framework**: [Next.js](https://nextjs.org/) (App Router)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Content**: Markdown files parsed with `gray-matter` and rendered with `react-markdown`.
+- **Icons**: [Lucide React](https://lucide.dev/)
 
 ## Getting Started
 
-First, run the development server:
+### Development
+
+To run the development server:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `src/app/[lang]`: Main routing logic for multi-language support.
+- `src/components`: UI components.
+- `src/lib`: Helper functions and content fetching logic.
+- `*.md`: The actual content files located in the root directory.
 
-## Learn More
+## Adding/Updating Content
 
-To learn more about Next.js, take a look at the following resources:
+To update a policy, simply edit the corresponding `.md` file in the root directory. The application uses these files as the source of truth.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To add a new language:
+1. Create the new `.md` files (e.g., `privacy-policy-es.md`).
+2. Update the language configuration if necessary.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## License
 
-## Deploy on Vercel
+This project is **Proprietary**. All rights reserved. The source code and documentation within this repository are the exclusive property of the Boo-Baby development team. Unauthorized copying, modification, or distribution is strictly prohibited.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Security & Safety
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Code Integrity**: Ensure all dependencies are updated and screened for vulnerabilities.
+- **Data Privacy**: No sensitive user data should be stored or handled by this frontend-only documentation repository.
+- **Access Control**: Keep repository access limited to authorized contributors only.
+
+## Deployment
+
+This project is optimized for deployment on [Vercel](https://vercel.com).
