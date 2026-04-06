@@ -54,7 +54,3 @@ This project is **Proprietary**. All rights reserved. The source code and docume
 - **Code Integrity**: Ensure all dependencies are updated and screened for vulnerabilities.
 - **Data Privacy**: No sensitive user data should be stored or handled by this frontend-only documentation repository.
 - **Access Control**: Keep repository access limited to authorized contributors only.
-
-## Deployment
-
-This project is optimized for deployment on [Vercel](https://vercel.com).
