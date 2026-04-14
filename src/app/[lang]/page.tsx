@@ -5,6 +5,7 @@ import { CheckCircle2, ShieldCheck, Zap, Globe, Sparkles } from "lucide-react";
 import type { Locale } from "@/lib/get-dictionary";
 import { getDictionary } from "@/lib/get-dictionary";
 import AppStoreButton from "@/components/AppStoreButton";
+import GooglePlayButton from "@/components/GooglePlayButton";
 
 export default async function Home({ params }: { params: Promise<{ lang: Locale }> }) {
   const { lang } = await params;
@@ -100,8 +101,16 @@ export default async function Home({ params }: { params: Promise<{ lang: Locale 
             {dict.marketing.subtitle}
           </p>
 
-          <div style={{ marginBottom: '5rem' }}>
+          <div style={{ 
+            marginBottom: '5rem',
+            display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'center',
+            gap: '1.5rem',
+            alignItems: 'center'
+          }}>
             <AppStoreButton lang={lang} variant="hero" />
+            <GooglePlayButton lang={lang} variant="hero" />
           </div>
 
           {/* Dynamic Showcase Component */}
